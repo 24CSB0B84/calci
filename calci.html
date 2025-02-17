@@ -1,0 +1,177 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Calculator</title>
+  <style>
+    :root {
+        --bg-color: #3A4655;
+        --btn-bg: #425062;
+        --btn-hover: #3e4b5c;
+        --border-color: #3C4857;
+        --text-color: #fff;
+        --accent-color: yellow;
+        --danger-color: red;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    h1 {
+        margin-top: 100px; /* Adds spacing below the sticky image */
+    }
+
+    .calc-body {
+        max-width: 350px;
+        width: 100%;
+        min-height: 450px;
+        box-shadow: 0 8px 50px -7px black;
+        background: var(--bg-color);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .calc-screen {
+        padding: 1rem;
+        background: #222;
+        color: white;
+        font-size: 1.8rem;
+        text-align: right;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .calc-button-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+
+    button {
+        width: 100%;
+        height: 65px;
+        font-size: 1.4rem;
+        background: var(--btn-bg);
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+        background: var(--btn-hover);
+        transform: scale(1.05);
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    .image-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .image-grid img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        filter: grayscale(50%);
+    }
+
+    .circle {
+        border-radius: 50%;
+    }
+    
+    .rounded {
+        border-radius: 15px;
+    }
+
+    .hexagon {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+
+    .parallelogram {
+        clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    }
+
+    .sticky-image {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+        z-index: 100;
+        background: white;
+        padding: 5px;
+        border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<img class="sticky-image" src="https://resilienteducator.com/wp-content/uploads/2012/11/AdobeStock_60467600_cup.jpg" alt="Sticky Image">
+
+<h1>Calculator</h1>
+
+<div class="calc-body">
+    <div class="calc-screen" aria-label="Calculator Screen">0</div>
+
+    <div class="calc-button-row">
+        <button class="ac">AC</button>
+        <button class="opt">&#43;&#47;&#8722;</button>
+        <button class="opt">&#37;</button>
+        <button class="opt">&#247;</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="opt">&#215;</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="opt">&#8722;</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="opt">&#43;</button>
+        <button>0</button>
+        <button>.</button>
+        <button>&#9003;</button>
+        <button class="opt">&#61;</button>
+    </div>
+</div>
+
+<div class="image-grid">
+    <img class="circle" src="https://i.ytimg.com/vi/Kp2bYWRQylk/maxresdefault.jpg" alt="Circle Shape">
+    <img class="rounded" src="https://images.squarespace-cdn.com/content/v1/586ec16bb3db2b558ebfec60/694329ee-2cd8-4786-9406-77ca00f30b07/math-header.jpg" alt="Rounded Shape">
+   
+    <img class="hexagon" src="https://news.harvard.edu/wp-content/uploads/2022/11/iStock-mathproblems.jpg" alt="Hexagon Shape">
+    <img class="parallelogram" src="https://resilienteducator.com/wp-content/uploads/2012/11/AdobeStock_60467600_cup.jpg" alt="Parallelogram Shape">
+</div>
+
+</body>
+</html>
